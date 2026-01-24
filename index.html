@@ -85,9 +85,46 @@
       <div class="brand">
         <h1>Glazed &amp; Grounded</h1>
         <p>Yoga with Timothy Maguire</p>
-        <p class="small">
-          <a href="mailto:hello@glazedandgrounded.com">hello@glazedandgrounded.com</a>
-        </p>
+        <section class="card" id="contact">
+  <h2>Contact</h2>
+  <p class="muted">Questions about classes, private sessions, or upcoming dates? Send a note.</p>
+
+  <form action="https://formspree.io/f/mjgyzzyo" method="POST">
+    <label>
+      Full Name<br />
+      <input type="text" name="name" required
+        style="width:100%;padding:10px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.18);color:var(--text);" />
+    </label>
+
+    <div style="height:12px"></div>
+
+    <label>
+      Email<br />
+      <input type="email" name="email" required
+        style="width:100%;padding:10px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.18);color:var(--text);" />
+    </label>
+
+    <div style="height:12px"></div>
+
+    <label>
+      Message<br />
+      <textarea name="message" rows="5" required
+        style="width:100%;padding:10px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.18);color:var(--text);"></textarea>
+    </label>
+
+    <!-- Optional: helps Formspree route replies -->
+    <input type="hidden" name="_replyto" value="" />
+
+    <div style="height:14px"></div>
+
+    <button type="submit" class="pill">Send message</button>
+
+    <p class="small muted" style="margin-top:10px;">
+      By submitting, you consent to being contacted about your message. We won’t sell your info.
+    </p>
+  </form>
+</section>
+
       </div>
 
       <!-- Yoga Alliance badge: use the official file from your Yoga Alliance dashboard -->
@@ -155,9 +192,9 @@
 
         <ul>
           <!-- Replace with your real URLs -->
-          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
-          <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.instagram.com/glazed_and_grounded?igsh=c3ZkOWJrdjQ2ZHdm" target="_blank" rel="noopener">Instagram</a></li>
+          <!--<li><a href="#" target="_blank" rel="noopener">Facebook</a></li>-->
+          <li><a href="https://www.tiktok.com/@glazed_and_grounded" target="_blank" rel="noopener">TikTok</a></li>
         </ul>
 
         <div class="divider"></div>
