@@ -1,62 +1,154 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Glazed & Grounded — Yoga</title>
-  <meta name="description" content="Yoga classes by Timothy Maguire (Glazed & Grounded). Upcoming classes, waiver, and social links." />
+  <meta name="description"
+    content="Yoga classes by Timothy Maguire (Glazed & Grounded). Upcoming classes, waiver, and social links." />
   <style>
     :root {
       --bg: #0b0f14;
       --card: #111826;
       --text: #e7eef8;
       --muted: #a7b4c6;
-      --line: rgba(255,255,255,.12);
+      --line: rgba(255, 255, 255, .12);
       --link: #8bd5ff;
       --btn: #1f2a3a;
       --btnHover: #2a3a52;
       --radius: 16px;
       --max: 920px;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1000px 800px at 20% -10%, rgba(139,213,255,.18), transparent 60%),
-                  radial-gradient(900px 700px at 90% 10%, rgba(255,180,120,.12), transparent 60%),
-                  var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1000px 800px at 20% -10%, rgba(139, 213, 255, .18), transparent 60%),
+        radial-gradient(900px 700px at 90% 10%, rgba(255, 180, 120, .12), transparent 60%),
+        var(--bg);
       color: var(--text);
       line-height: 1.5;
     }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
 
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 18px 48px; }
-    header { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 30px 2px 28px; text-align: center; }
-    .hero-logo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid var(--line); box-shadow: 0 8px 30px rgba(0,0,0,.4); }
-    .brand h1 { font-size: 32px; margin: 0; letter-spacing: .2px; }
-    .brand p { margin: 6px 0 0; color: var(--muted); }
-    .tagline { font-size: 20px; color: var(--link); font-style: italic; margin: 8px 0 0; }
-    .nav-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 14px; }
-    .badge img { width: 96px; height: auto; border-radius: 10px; background: rgba(255,255,255,.06); padding: 8px; border: 1px solid var(--line); }
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
 
-    .grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 16px; }
-    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 48px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 30px 2px 28px;
+      text-align: center;
+    }
+
+    .hero-logo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--line);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .4);
+    }
+
+    .brand h1 {
+      font-size: 32px;
+      margin: 0;
+      letter-spacing: .2px;
+    }
+
+    .brand p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
+
+    .tagline {
+      font-size: 20px;
+      color: var(--link);
+      font-style: italic;
+      margin: 8px 0 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 14px;
+    }
+
+    .badge img {
+      width: 96px;
+      height: auto;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .06);
+      padding: 8px;
+      border: 1px solid var(--line);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 860px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .card {
-      background: rgba(17,24,38,.82);
+      background: rgba(17, 24, 38, .82);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 18px;
       backdrop-filter: blur(6px);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
     }
-    .card h2 { margin: 0 0 10px; font-size: 18px; }
-    .card p { margin: 8px 0; color: var(--muted); }
-    .pillbar { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      margin: 8px 0;
+      color: var(--muted);
+    }
+
+    .pillbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
     .pill {
-      display: inline-flex; align-items: center; gap: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 10px 12px;
       background: var(--btn);
       border: 1px solid var(--line);
@@ -64,19 +156,63 @@
       color: var(--text);
       font-weight: 600;
     }
-    .pill:hover { background: var(--btnHover); text-decoration: none; }
-    .small { font-size: 13px; color: var(--muted); }
-    .divider { height: 1px; background: var(--line); margin: 14px 0; }
 
-    ul { margin: 10px 0 0; padding-left: 18px; color: var(--text); }
-    li { margin: 8px 0; color: var(--text); }
-    .muted { color: var(--muted); }
+    .pill:hover {
+      background: var(--btnHover);
+      text-decoration: none;
+    }
 
-    .contact-section { margin-top: 16px; }
-    .about-section { margin-bottom: 16px; }
-    .about-section p { margin-bottom: 14px; }
-    .ryt-inline { width: 80px; height: auto; vertical-align: middle; margin-left: 8px; border-radius: 8px; }
-    footer { margin-top: 18px; color: var(--muted); font-size: 12px; text-align: center; }
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 14px 0;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--text);
+    }
+
+    li {
+      margin: 8px 0;
+      color: var(--text);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .contact-section {
+      margin-top: 16px;
+    }
+
+    .about-section {
+      margin-bottom: 16px;
+    }
+
+    .about-section p {
+      margin-bottom: 14px;
+    }
+
+    .ryt-inline {
+      width: 80px;
+      height: auto;
+      margin-left: 8px;
+      border-radius: 8px;
+    }
+
+    footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -94,18 +230,27 @@
           <a class="pill" href="#contact">Contact Tim</a>
         </div>
       </div>
-      <div class="badge">
-        <img src="assets/RYT200.png" alt="Yoga Alliance credential badge" />
-      </div>
     </header>
 
     <section class="card about-section" id="about">
       <h2>About Tim</h2>
-      <p>I first discovered yoga in an ordinary place, my local YMCA, while my daughter was in a swim lesson. What began as a way to fill an hour quickly became something more meaningful. Beyond the physical movement, yoga offered mindfulness, breath, and a sense of calm that I hadn't experienced before.</p>
-      <p>Over time, yoga became a steady and supportive practice in my life. I came to it later than many people do, without a background in athletics or flexibility, and with plenty of assumptions about what yoga was "supposed" to look like. My experience challenged those assumptions and showed me that yoga doesn't require a certain body type, age, or level of fitness, it simply requires a willingness to begin.</p>
-      <p>In 2025, I completed my 200-hour Registered Yoga Teacher training at Down Under School of Yoga in Brookline, MA, and I'm currently continuing my education through their 300-hour program. <img src="assets/RYT200.png" alt="RYT 200 Certified" class="ryt-inline" /></p>
-      <p>I started Glazed & Grounded to create a gentle invitation into yoga for people who may feel intimidated by traditional fitness or yoga environments. My classes are designed for those who want to move their bodies, become more flexible, and explore mindfulness, especially if running, lifting weights, or high-intensity workouts don't feel like the right fit.</p>
-      <p>As a teacher, my aim is to offer a supportive and welcoming space, with an emphasis on breath, mindfulness, and deliberate movement. Classes are beginner-friendly, approachable, and grounded in the belief that yoga can meet you where you are, at any stage of life.</p>
+      <p>I first discovered yoga in an ordinary place, my local YMCA, while my daughter was in a swim lesson. What began
+        as a way to fill an hour quickly became something more meaningful. Beyond the physical movement, yoga offered
+        mindfulness, breath, and a sense of calm that I hadn't experienced before.</p>
+      <p>Over time, yoga became a steady and supportive practice in my life. I came to it later than many people do,
+        without a background in athletics or flexibility, and with plenty of assumptions about what yoga was "supposed"
+        to look like. My experience challenged those assumptions and showed me that yoga doesn't require a certain body
+        type, age, or level of fitness, it simply requires a willingness to begin.</p>
+      <p>In 2025, I completed my 200-hour
+        Registered Yoga Teacher training at Down Under School of Yoga in Brookline, MA, and I'm currently continuing my
+        education through their 300-hour program.<img src="assets/RYT200.png" alt="RYT 200 Certified" class="ryt-inline" /></p>
+      <p>I started Glazed & Grounded to create a gentle invitation into yoga for people who may feel intimidated by
+        traditional fitness or yoga environments. My classes are designed for those who want to move their bodies,
+        become more flexible, and explore mindfulness, especially if running, lifting weights, or high-intensity
+        workouts don't feel like the right fit.</p>
+      <p>As a teacher, my aim is to offer a supportive and welcoming space, with an emphasis on breath, mindfulness, and
+        deliberate movement. Classes are beginner-friendly, approachable, and grounded in the belief that yoga can meet
+        you where you are, at any stage of life.</p>
     </section>
 
     <section class="card about-section" id="classes">
@@ -134,11 +279,21 @@
       <h2>Sign the Waiver</h2>
       <p class="muted">Please sign the waiver before attending your first class.</p>
       <div class="pillbar">
-        <a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSc4ZNz1YV8dL0-2oqrECuPVh9v52aHGqbY0CUMslMqLmtprVw/viewform?usp=publish-editor" target="_blank" rel="noopener">Open Waiver Form</a>
+        <a class="pill"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSc4ZNz1YV8dL0-2oqrECuPVh9v52aHGqbY0CUMslMqLmtprVw/viewform?usp=publish-editor"
+          target="_blank" rel="noopener">Open Waiver Form</a>
       </div>
     </section>
 
     <section class="card contact-section" id="contact">
+      <h2>Socials</h2>
+      <p class="muted">Follow for class announcements and updates.</p>
+      <ul>
+        <li><a href="https://www.instagram.com/glazed_and_grounded?igsh=c3ZkOWJrdjQ2ZHdm" target="_blank"
+            rel="noopener">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@glazed_and_grounded" target="_blank" rel="noopener">TikTok</a></li>
+      </ul>
+
       <h2>Contact Tim</h2>
       <p class="muted">Questions about classes, private sessions, or upcoming dates? Send a note.</p>
 
@@ -178,12 +333,7 @@
 
       <div class="divider"></div>
 
-      <h2>Socials</h2>
-      <p class="muted">Follow for class announcements and updates.</p>
-      <ul>
-        <li><a href="https://www.instagram.com/glazed_and_grounded?igsh=c3ZkOWJrdjQ2ZHdm" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://www.tiktok.com/@glazed_and_grounded" target="_blank" rel="noopener">TikTok</a></li>
-      </ul>
+
     </section>
 
     <footer>
@@ -195,4 +345,5 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>
