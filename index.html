@@ -19,6 +19,7 @@
       --max: 920px;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
@@ -32,13 +33,16 @@
     a:hover { text-decoration: underline; }
 
     .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 18px 48px; }
-    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 2px 18px; }
-    .brand h1 { font-size: 26px; margin: 0; letter-spacing: .2px; }
+    header { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 30px 2px 28px; text-align: center; }
+    .hero-logo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid var(--line); box-shadow: 0 8px 30px rgba(0,0,0,.4); }
+    .brand h1 { font-size: 32px; margin: 0; letter-spacing: .2px; }
     .brand p { margin: 6px 0 0; color: var(--muted); }
+    .tagline { font-size: 20px; color: var(--link); font-style: italic; margin: 8px 0 0; }
+    .nav-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 14px; }
     .badge img { width: 96px; height: auto; border-radius: 10px; background: rgba(255,255,255,.06); padding: 8px; border: 1px solid var(--line); }
 
     .grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 16px; }
-    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } header { flex-direction: column; align-items: flex-start; } }
+    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
 
     .card {
       background: rgba(17,24,38,.82);
@@ -68,80 +72,37 @@
     li { margin: 8px 0; color: var(--text); }
     .muted { color: var(--muted); }
 
-    .qr {
-      display: flex; gap: 14px; align-items: center;
-      padding: 12px; border-radius: 14px; border: 1px dashed var(--line);
-      background: rgba(0,0,0,.18);
-      margin-top: 10px;
-    }
-    .qr img { width: 96px; height: 96px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255,255,255,.06); }
-    footer { margin-top: 18px; color: var(--muted); font-size: 12px; }
+    .contact-section { margin-top: 16px; }
+    footer { margin-top: 18px; color: var(--muted); font-size: 12px; text-align: center; }
   </style>
 </head>
 
 <body>
   <div class="wrap">
     <header>
+      <img src="assets/logo.png" alt="Glazed & Grounded Logo" class="hero-logo" />
       <div class="brand">
         <h1>Glazed &amp; Grounded</h1>
         <p>Yoga with Timothy Maguire</p>
-        <section class="card" id="contact">
-  <h2>Contact</h2>
-  <p class="muted">Questions about classes, private sessions, or upcoming dates? Send a note.</p>
-
-  <form action="https://formspree.io/f/mjgyzzyo" method="POST">
-    <label>
-      Full Name<br />
-      <input type="text" name="name" required
-        style="width:100%;padding:10px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.18);color:var(--text);" />
-    </label>
-
-    <div style="height:12px"></div>
-
-    <label>
-      Email<br />
-      <input type="email" name="email" required
-        style="width:100%;padding:10px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.18);color:var(--text);" />
-    </label>
-
-    <div style="height:12px"></div>
-
-    <label>
-      Message<br />
-      <textarea name="message" rows="5" required
-        style="width:100%;padding:10px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.18);color:var(--text);"></textarea>
-    </label>
-
-    <!-- Optional: helps Formspree route replies -->
-    <input type="hidden" name="_replyto" value="" />
-
-    <div style="height:14px"></div>
-
-    <button type="submit" class="pill">Send message</button>
-
-    <p class="small muted" style="margin-top:10px;">
-      By submitting, you consent to being contacted about your message. We won’t sell your info.
-    </p>
-  </form>
-</section>
-
+        <p class="tagline">Yoga for people who can't do yoga</p>
+        <div class="nav-links">
+          <a class="pill" href="#classes">See upcoming classes</a>
+          <a class="pill" href="#waiver">Sign waiver</a>
+          <a class="pill" href="#contact">Contact Tim</a>
+        </div>
       </div>
-
-      <!-- Yoga Alliance badge: use the official file from your Yoga Alliance dashboard -->
       <div class="badge">
         <img src="assets/RYT200.png" alt="Yoga Alliance credential badge" />
       </div>
     </header>
 
     <div class="grid">
-      <!-- LEFT: Upcoming Classes -->
-      <section class="card">
+      <section class="card" id="classes">
         <h2>Upcoming Classes</h2>
         <p class="muted">Beginner-friendly. Bring a mat (and blocks if you have them).</p>
 
         <div class="divider"></div>
 
-        <!-- Replace these with your real class entries -->
         <ul>
           <li>
             <strong>Sat, Feb 1 — 11:00–12:00</strong><br />
@@ -156,33 +117,18 @@
 
         <div class="divider"></div>
 
-        <div class="pillbar">
-          <!-- Replace with your signup link (Eventbrite, Square, Google Form, DM instructions, etc.) -->
+        <div class="pillbar" id="waiver">
           <a class="pill" href="#" target="_blank" rel="noopener">Reserve a spot</a>
-
-          <!-- Waiver link (Google Form) -->
           <a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSc4ZNz1YV8dL0-2oqrECuPVh9v52aHGqbY0CUMslMqLmtprVw/viewform?usp=publish-editor" target="_blank" rel="noopener">Sign the waiver</a>
         </div>
+      </section>
 
-         <!--<div class="qr">
-          Create waiver-qr.png that points directly to the waiver form 
-          <img src="assets/waiver-qr.png" alt="QR code to waiver form" />
-          <div>
-            <strong>Waiver QR</strong>
-            <p class="small">Scan to open the waiver form on your phone.</p>
-            <p class="small muted">Tip: save this QR image to reuse on posters and at venues.</p>
-          </div>
-        </div>
-      </section>-->
-
-      <!-- RIGHT: Links / Socials / Waiver -->
       <aside class="card">
         <h2>Quick Links</h2>
         <p class="muted">The essentials, all in one place.</p>
 
         <div class="pillbar">
           <a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSc4ZNz1YV8dL0-2oqrECuPVh9v52aHGqbY0CUMslMqLmtprVw/viewform?usp=publish-editor" target="_blank" rel="noopener">Waiver (Google Form)</a>
-          
         </div>
 
         <div class="divider"></div>
@@ -191,19 +137,56 @@
         <p class="muted">Follow for class announcements and updates.</p>
 
         <ul>
-          <!-- Replace with your real URLs -->
           <li><a href="https://www.instagram.com/glazed_and_grounded?igsh=c3ZkOWJrdjQ2ZHdm" target="_blank" rel="noopener">Instagram</a></li>
-          <!--<li><a href="#" target="_blank" rel="noopener">Facebook</a></li>-->
           <li><a href="https://www.tiktok.com/@glazed_and_grounded" target="_blank" rel="noopener">TikTok</a></li>
         </ul>
 
         <div class="divider"></div>
 
         <p class="small">
-          <strong>Trademark notice:</strong> “The Yoga Alliance name, trademark(s) and logo(s) used herein are the intellectual property of Yoga Alliance.”
+          <strong>Trademark notice:</strong> "The Yoga Alliance name, trademark(s) and logo(s) used herein are the intellectual property of Yoga Alliance."
         </p>
       </aside>
     </div>
+
+    <section class="card contact-section" id="contact">
+      <h2>Contact</h2>
+      <p class="muted">Questions about classes, private sessions, or upcoming dates? Send a note.</p>
+
+      <form action="https://formspree.io/f/mjgyzzyo" method="POST">
+        <label>
+          Full Name<br />
+          <input type="text" name="name" required
+            style="width:100%;padding:10px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.18);color:var(--text);" />
+        </label>
+
+        <div style="height:12px"></div>
+
+        <label>
+          Email<br />
+          <input type="email" name="email" required
+            style="width:100%;padding:10px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.18);color:var(--text);" />
+        </label>
+
+        <div style="height:12px"></div>
+
+        <label>
+          Message<br />
+          <textarea name="message" rows="5" required
+            style="width:100%;padding:10px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.18);color:var(--text);"></textarea>
+        </label>
+
+        <input type="hidden" name="_replyto" value="" />
+
+        <div style="height:14px"></div>
+
+        <button type="submit" class="pill">Send message</button>
+
+        <p class="small muted" style="margin-top:10px;">
+          By submitting, you consent to being contacted about your message. We won't sell your info.
+        </p>
+      </form>
+    </section>
 
     <footer>
       © <span id="year"></span> Glazed &amp; Grounded, LLC
